@@ -1,0 +1,14 @@
+<DOCTYPEhtml>
+<html>
+<head>
+<title>heading</title>
+<body>
+<h1>welcome to codingal</h1>
+<h2><i>welcome to codingal</i></h2>
+<h3><sup>welcome</sup> to codingal</h3>
+<h4><del>welcome to codingal</h4>
+<h5><sup> welcome</sup> to codingal</h5>
+<h6><q>welcome to codingal</q></h6>
+<p>welcome to codingal></p>
+</body>
+</html>
