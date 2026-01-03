@@ -1,0 +1,26 @@
+<DOCTYPEhtml>
+<html>
+    <head>
+        <title> For learning list</title>
+    </head>
+    <body>
+     <h2> Ordered List</h2>
+     <ul>
+        <li> Wajeeha Nisar </li>   
+        <li> Grade 12 </li>
+        <li> Learning List</li>
+     </ul>
+     <h3> Unordered List</h3>
+     <ol>
+        <li> Wajeeha Nisar </li>
+        <li> Grade 12 </li>
+        <li> Learning List </li>
+     </ol>
+     <h4> Definition List </h4>
+     <dl> 
+        <dt> Wajeeha Nisar </dt>
+        <dt> Grade 12 </dt>
+        <dt> Learning List </dt>
+     </dl>
+    </body>
+</html>
