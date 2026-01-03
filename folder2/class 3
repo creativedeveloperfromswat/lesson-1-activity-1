@@ -1,0 +1,10 @@
+<DOCTYPEhtml>
+<html>
+    <head>
+        <title> Activity 1</title>
+    </head>
+    <body>
+  <p> This is my activity </p>    
+  <a href="https://www.google.com">Google</a>
+    </body>
+</html>
