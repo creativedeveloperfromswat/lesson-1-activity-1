@@ -1,0 +1,33 @@
+<DOCTYPEhtml>
+<html>
+    <head>
+        <title> Learning of Tables </title>
+    </head>
+    <body>
+        <table border=5 bgcolor=navyblue>
+            <tr>
+                <th bgcolor=green border=10>film</th>
+                <th>male actor</th>
+                <th>femaleactor</th>
+            </tr>
+            <tr>
+                <td>Chori chori chupke chupke</td>
+                <td>Salman Khan</td>
+                <td>Pretty Zinta and RaniMukherjee</td>
+            </tr>
+            <tr>
+            <td>Pathan</td>
+            <td>Shahrukh Khan</td>
+            <td>Deepika Padukone</td>
+            </tr>
+            <tr>
+                <td>War</td>
+                <td>Hrithik Roshan and Tiger Shroff</td>
+            </tr>
+            <tr>
+                <td>Guest in London</td>
+                <td>Kartik Aryan and Kriti Kharbanda</td>
+            </tr>
+        </table>
+    </body>
+</html>
