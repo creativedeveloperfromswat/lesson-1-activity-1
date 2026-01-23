@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gradient Example</title>
+    <style>
+        #linearGradients {
+            height: 200px;
+            width: 100;
+            background: linear-gradient(teal, black);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="linearGradients">
+        <h1> Wajeeha Nisar</h1>
+    </div>
+</body>
+
+</html>

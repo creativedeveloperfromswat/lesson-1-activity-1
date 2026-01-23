@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Background,Gradient,Animation</title>
+        <style>
+            /*Background-Image*/
+     body {
+            background-image: url("image.jpg");
+            background-repeat:no-repeat;
+            background-attachment: fixed;
+            background-position: right top;
+     }
+     /*Gradient Box*/
+        #grad1 {
+            height: 200px;
+            width: 100;
+            background: linear-gradient(teal, black);
+        }
+            /*Animation*/
+            @keyframes example {
+                0% {
+                    background-color: navy};
+                25% {  background-color: teal};
+                50% { background-background-color: orange};
+                75% {  background-color: purple};
+                100% { background-color: coral};
+            }
+
+            /*The element to apply the animation to*/
+            div {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                animation-name: example;
+                animation-duration: 5s;
+                text-align: center;
+                line-height: 100px;
+            }
+            </style>
+    </head>
+        <body>
+          <h1> Wajeeha Nisar</h1>
+          <div id="grad1"></div>
+            <div class="box"> Codingal</div>
+            </body>
+        </html>
