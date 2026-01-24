@@ -1,46 +1,58 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> Background,Gradient,Animation</title>
-        <style>
-            /*Background-Image*/
-     body {
-            background-image: url("image.jpg");
-            background-repeat:no-repeat;
+
+<head>
+    <title>Cascading Effect Project</title>
+    <style>
+        body {
+            background-color: lightcoral;
+
+            background-image: url("css image.jpg");
             background-attachment: fixed;
-            background-position: right top;
-     }
-     /*Gradient Box*/
-        #grad1 {
-            height: 200px;
-            width: 100;
-            background: linear-gradient(teal, black);
+            background-repeat: no-repeat;
+            background-size: 400px;
+            background-position: top right;
         }
-            /*Animation*/
-            @keyframes example {
-                0% {
-                    background-color: navy};
-                25% {  background-color: teal};
-                50% { background-background-color: orange};
-                75% {  background-color: purple};
-                100% { background-color: coral};
+
+        #linearGradients {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(to bottom left, maroon 20%, blue 40%, pink 30%);
+        }
+
+        #radialgradients {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(lightgray, lightseagreen, lightslategray);
+        }
+
+        #Animation {
+            width: 400px;
+            height: 400px;
+            animation-name: Animation;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            margin-bottom: auto;
+        }
+
+        @keyframes Animation {
+            0% {
+                background-color: blanchedalmond;
             }
 
-            /*The element to apply the animation to*/
-            div {
-                width: 100px;
-                height: 100px;
-                background-color: red;
-                animation-name: example;
-                animation-duration: 5s;
-                text-align: center;
-                line-height: 100px;
+            50% {
+                background-color: aquamarine;
             }
-            </style>
-    </head>
-        <body>
-          <h1> Wajeeha Nisar</h1>
-          <div id="grad1"></div>
-            <div class="box"> Codingal</div>
-            </body>
-        </html>
+
+            100% {
+                background-color: blueviolet;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="linearGradients">
+        <h1>Here I used lineargradients</h1>
+    </div>
+    <d
