@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title> MY world</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+            font-style: italic;
+            color: aqua;
+        }
+        h1{
+            color: blue;
+        }
+
+        /* Attribute selector*/
+        a{
+        text-decoration:underline;
+    }
+        a:hover{
+        color:red
+        }
+
+        /* Child Selector*/
+        ul>li{
+            font-weight: bold;
+        }
+        /* Sibling Selector*/
+        h1+p{
+            background-color: blueviolet;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* :nth-child(n) pseudo-class*/
+        ul li:nth-child(3) {
+            background-color: bisque;
+        }
+
+        /* :not(selector) pseudo-class*/
+        p:not(:first-of-type){
+            text-decoration: underline;
+        }
+
+        /* : Before pseudo-element*/
+        ul li: Before{
+            content:"Cloud";
+        }
+
+        /* : first-letter pseudo-element*/
+        p::first-letter{
+            font-size: 200px;
+            color: azure;
+        }
+        
+    </style>
+
+    </head>
+    <body>
+        <h1> Welcome to earth</h1>
+        <ul>
+            <li> Trees</li>
+            <li> Water</li>
+            <li> Mountains</li>
+            <li> Humans</li>
+            <li> Oxygen</li>
+            <li> Animals</li>
+             </ul>
+             <P> This is my earth</P>
+             <p> This is my world</p>
+             <a href="#"> Join our earth mission</a>
+                <a href="#">Save my earth</a>
+                <a href="#"> Save my world</a>
+    </body>
