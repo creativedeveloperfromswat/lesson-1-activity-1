@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Motu Patlu</title>
+        <style>
+          body{
+            background-color: white;
+            font-style: italic;
+            color: aqua;
+          } 
+           h1{
+            color: blue;
+           }
+
+           /* Attribute Selector*/
+           a{
+            text-decoration: underline;
+           }
+            a:hover{
+        color:red
+        }
+
+        /* Child Selector*/
+        ul>li{
+            font-weight:bold;
+        }
+
+        /* Sibling Selector*/
+        h1+p{
+            background-color: blueviolet;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* :nth-child(n) pseudo-class*/
+        ul li:nth-child(3) {
+            background-color: bisque;
+        }
+
+        /* :not(selector) pseudo-class*/
+        p:not(:first-of-type){
+            text-decoration: underline;
+        }
+
+         /* : Before pseudo-element*/
+        ul li: Before{
+            content:"Cloud";
+        }
+
+        /* : first-letter pseudo-element*/
+        p::first-letter{
+            font-size: 200px;
+            color: azure;
+        }
+
+        </style>
+    </head>
+
+    <body><h1> Motu Patlu World</h1>
+        <ul>
+            <li> Motu</li>
+            <li> Patlu</li>
+            <li> Chingam Sir</li>
+            <li> Dr Jathka</li>
+            <li> John</li>
+            <li> Kaseda Ram</li>
+        </ul>
+        <p> Hi, Motu Patlu Cartoon</p>
+        <p> This is my cartoon world</p>
+        a href="#"> Every child love cartoon</a>
+        a href="#"> They enjoy cartoons</a>
+        a href="#"> Cartoons are too much entertaining</a>
+    </body>
+</html>
