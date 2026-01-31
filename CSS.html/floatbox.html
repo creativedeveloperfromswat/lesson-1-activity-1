@@ -3,21 +3,27 @@
     <head>
         <title> Float box</title>
         <style>
-            .box{
-              width: 120px;
-      height: 80px;
-      background-color: skyblue;
-      float: left;
-      margin-right: 15px;
-      text-align: center;
-      line-height: 80px;
-    }
- </style>
-    </head>
+            img#treeRight{
+                float: right;
+            }
 
+            img#treeLeft{
+                float: left;
+            }
+
+            </style>
+    </head>
     <body>
-        <div class="box"> Float example</div>
-        <p> hello, I am Wajeeha Nisar.
-            This is my float box.</p>
+
+        <h2> Float Right</h2>
+        <p> This is simple example of float box.</p>
+
+        <p>
+            <img id="treeRight" src="image.jpg" alt="tree"
+ style="width:100px;height: 100px;">
+          <img id="treeLeft" src="image.jpg" alt="tree"
+ style="width: 100px;height: 100px;">
+          This is how we use float in css
+        </p>
     </body>
 </html>
