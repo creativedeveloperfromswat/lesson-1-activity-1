@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Functions in JavaScript</title>
+    </head>
+
+    <body>
+           <button onclick="greet()">click me</button>
+            <button onclick="add(3,2)">click me</button>
+            <button onclick="sub(3,2)">click me</button>
+            <button onclick="mul(3,2)">click me</button>
+            <button onclick="div(3,2)">click me</button>
+
+         <script>
+            function greet(){
+                alert("Welcome to my page!");
+            }
+
+
+            function add(a,b){
+                document.write("a+b is", (a+b),"<br>");
+            }
+
+             function sub(a, b){
+                    document.write("a-b is", (a-b),"<br>");
+                }
+                
+                function mul(a, b){
+                        document.write("a * b is", (a * b),"<br>");
+                    }
+                    
+                    function div(a, b){
+                            document.write("a / b is", (a / b),"<br>");
+                        }
+
+                       function add(a, b){ 
+                        return a + b;
+                       }
+                        document.write(add(3,2));
+                     
+        </script>
+    </body>
+</html>
