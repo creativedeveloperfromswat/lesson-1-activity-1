@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Error Handling In JS</title>
+    </head>
+
+    <body>
+        <h2>JavaScript Error Handling</h2>
+        <p>This example demonstrates how to use <b>catch</b> to display an error</p>
+
+        <p id="error-message"></p>
+        
+        <script>
+            try{
+                addalert("Welcome guest!");
+            }
+
+            catch(err) {
+                document.getElementById("error-message").innerHTML = err.message;
+            }
+        </script>
+    </body>
+</html>
