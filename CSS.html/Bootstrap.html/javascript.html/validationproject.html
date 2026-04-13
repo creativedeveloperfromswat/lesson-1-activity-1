@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Age Validation Form</title>
+
+        <script>
+            function validateForm() {
+                var x = document.forms["myForm"]["fname"].value;
+                if (x == "") {
+                    alert("Name must be filled out");
+                    return false;
+                }
+                var x = document.forms["myForm"]["hname"].value;
+                if (x == "") {
+                    alert("Age must be filled out");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <form name="myForm" onsubmit="return validateForm()">
+            Name: <input type="text" name="fname">
+            age: <input type="number" name="hname">
+            <input type="submit" value="submit">
+        </form>
+        
+        <p id="message"></p>
+    </body>
+</html>
