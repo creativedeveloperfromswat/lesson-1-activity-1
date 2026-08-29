@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AURELIA Jewellery | Elegant Jewellery Collection</title>
+
+    <meta name="description" content="Discover elegant necklaces, rings, earrings and bracelets at AURELIA Jewellery.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fffdf9;
+            color: #292522;
+        }
+
+        /* TOP BAR */
+
+        .top-bar {
+            background: #292522;
+            color: white;
+            text-align: center;
+            padding: 9px;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        /* HEADER */
+
+        header {
+            background: white;
+            padding: 20px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 30px;
+            letter-spacing: 5px;
+            color: #a27a35;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 13px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #a27a35;
+        }
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .search {
+            border: 1px solid #ddd;
+            padding: 10px 14px;
+            width: 190px;
+            outline: none;
+        }
+
+        .cart {
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #cart-count {
+            background: #a27a35;
+            color: white;
+            padding: 3px 7px;
+            border-radius: 50%;
+            font-size: 11px;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            padding: 70px 8%;
+            background:
+                linear-gradient(to right,
+                    rgba(248, 241, 230, .96),
+                    rgba(248, 241, 230, .45)),
+                url("https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 520px;
+        }
+
+        .hero-content span {
+            color: #a27a35;
+            letter-spacing: 4px;
+            font-size: 13px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: 62px;
+            font-weight: normal;
+            line-height: 1.1;
+            margin: 18px 0;
+        }
+
+        .hero p {
+            color: #625b54;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #a27a35;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background: #806027;
+        }
+
+        /* CATEGORIES */
+
+        .section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-family: Georgia, serif;
+            font-size: 40px;
+            font-weight: normal;
+        }
+
+        .section-title p {
+            color: #777;
+            margin-top: 10px;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .category img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .4s;
+        }
+
+        .category:hover img {
+            transform: scale(1.08);
+        }
+
+        .category-name {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, .88);
+            font-family: Georgia, serif;
+            font-size: 21px;
+        }
+
+        /* PRODUCTS */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .product {
+            background: white;
+            border: 1px solid #eee5d8;
+            position: relative;
+            transition: .3s;
+        }
+
+        .product:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
+        }
+
+        .product img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .heart {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: white;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-family: Georgia, serif;
+            font-size: 19px;
+            font-weight: normal;
+            margin-bottom: 8px;
+        }
+
+        .price {
+            color: #a27a35;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .add-cart {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #a27a35;
+            background: white;
+            color: #8b682d;
+            cursor: pointer;
+        }
+
+        .add-cart:hover {
+            background: #a27a35;
+            color: white;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: #f3ede4;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            padding: 90px 10%;
+        }
+
+        .about img {
+            width: 48%;
+            height: 420px;
+            object-fit: cover;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content span {
+            color: #a27a35;
+            letter-spacing: 3px;
+            font-size: 13px;
+        }
+
+        .about-content h2 {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            font-weight: normal;
+            margin: 15px 0;
+        }
+
+        .about-content p {
+            color: #665e56;
+            line-height: 1.9;
+            margin-bottom: 25px;
+        }
+
+        /* NEWSLETTER */
+
+        .newsletter {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .newsletter h2 {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            font-weight: normal;
+        }
+
+        .newsletter p {
+            color: #777;
+            margin: 15px 0 25px;
+        }
+
+        .email {
+            padding: 14px;
+            width: 300px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #292522;
+            color: white;
+            padding: 50px 7%;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 30px;
+        }
+
+        footer h3 {
+            color: #d1a75b;
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer a {
+            color: #bbb;
+            text-decoration: none;
+            line-height: 2;
+            font-size: 14px;
+        }
+
+        .copyright {
+            border-top: 1px solid #444;
+            margin-top: 40px;
+            padding-top: 20px;
+            color: #aaa;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            nav {
+                display: none;
+            }
+
+            .categories,
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .about {
+                flex-direction: column;
+            }
+
+            .about img {
+                width: 100%;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .search {
+                display: none;
+            }
+
+            .hero {
+                min-height: 550px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .categories,
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+
+    <div class="top-bar">
+        ✨ FREE DELIVERY ON ORDERS ABOVE RS. 3,000 ✨
+    </div>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            AURELIA
+        </div>
+
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#shop">SHOP</a>
+            <a href="#categories">CATEGORIES</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
+
+        <div class="header-icons">
+
+            <input class="search" type="text" id="searchInput" placeholder="Search jewellery..."
+                onkeyup="searchProducts()">
+
+            <div class="cart" onclick="showCart()">
+                🛒 <span id="cart-count">0</span>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <span>NEW COLLECTION 2026</span>
+
+            <h1>
+                Jewellery made to make you shine.
+            </h1>
+
+            <p>
+                Discover timeless pieces designed to add
+                elegance to every moment of your life.
+            </p>
+
+            <a href="#shop" class="btn">
+                SHOP NOW
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <section class="section" id="categories">
+
+        <div class="section-title">
+
+            <h2>Shop By Category</h2>
+
+            <p>
+                Find something beautiful for every occasion.
+            </p>
+
+        </div>
+
+
+        <div class="categories">
+
+            <div class="category">
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80">
+                <div class="category-name">Necklaces</div>
+            </div>
+
+            <div class="category">
+                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=80">
+                <div class="category-name">Rings</div>
+            </div>
+
+            <div class="category">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=80">
+                <div class="category-name">Earrings</div>
+            </div>
+
+            <div class="category">
+                <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=80">
+                <div class="category-name">Bracelets</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+
+    <section class="section" id="shop">
+
+        <div class="section-title">
+
+            <h2>Best Sellers</h2>
+
+            <p>
+                Our most-loved jewellery pieces.
+            </p>
+
+        </div>
+
+
+        <div class="products" id="productList">
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product">
+
+                <button class="heart">♡</button>
+
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80">
+
+                <div class="product-info">
+
+                    <h3>Golden Pendant</h3>
+
+                    <div class="price">
+                        Rs. 4,500
+                    </div>
+
+                    <button class="add-cart" onclick="addToCart('Golden Pendant', 4500)">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product">
+
+                <button class="heart">♡</button>
+
+                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=80">
+
+                <div class="product-info">
+
+                    <h3>Classic Gold Ring</h3>
+
+                    <div class="price">
+                        Rs. 3,200
+                    </div>
+
+                    <button class="add-cart" onclick="addToCart('Classic Gold Ring', 3200)">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product">
+
+                <button class="heart">♡</button>
+
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=80">
+
+                <div class="product-info">
+
+                    <h3>Pearl Earrings</h3>
+
+                    <div class="price">
+                        Rs. 2,800
+                    </div>
+
+                    <button class="add-cart" onclick="addToCart('Pearl Earrings', 2800)">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="product">
+
+                <button class="heart">♡</button>
+
+                <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=80">
+
+                <div class="product-info">
+
+                    <h3>Elegant Bracelet</h3>
+
+                    <div class="price">
+                        Rs. 3,900
+                    </div>
+
+                    <button class="add-cart" onclick="addToCart('Elegant Bracelet', 3900)">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=900&q=80">
+
+        <div class="about-content">
+
+            <span>OUR STORY</span>
+
+            <h2>
+                Made with love.
+                Worn with confidence.
+            </h2>
+
+            <p>
+                AURELIA Jewellery brings together timeless
+                elegance and modern design. Each piece is
+                carefully selected to become a beautiful part
+                of your everyday style.
+            </p>
+
+            <a href="#contact" class="btn">
+                LEARN MORE
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- NEWSLETTER -->
+
+    <section class="newsletter" id="contact">
+
+        <h2>Join Our Jewellery Family</h2>
+
+        <p>
+            Be the first to know about new collections and special offers.
+        </p>
+
+        <input class="email" type="email" placeholder="Enter your email">
+
+        <button class="btn" onclick="subscribe()">
+            SUBSCRIBE
+        </button>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+                <h3>AURELIA</h3>
+                <p>
+                    Elegant jewellery for beautiful moments.
+                </p>
+            </div>
+
+            <div>
+                <h3>SHOP</h3>
+                <p><a href="#shop">Necklaces</a></p>
+                <p><a href="#shop">Rings</a></p>
+                <p><a href="#shop">Earrings</a></p>
+                <p><a href="#shop">Bracelets</a></p>
+            </div>
+
+            <div>
+                <h3>HELP</h3>
+                <p><a href="#">Shipping</a></p>
+                <p><a href="#">Returns</a></p>
+                <p><a href="#">FAQs</a></p>
+            </div>
+
+            <div>
+                <h3>FOLLOW</h3>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">TikTok</a></p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 AURELIA Jewellery. All rights reserved.
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        let cart = [];
+
+        function addToCart(productName, price) {
+
+            cart.push({
+                name: productName,
+                price: price
+            });
+
+            document.getElementById("cart-count").innerText = cart.length;
+
+            alert(productName + " has been added to your cart! 💎");
+        }
+
+
+        function showCart() {
+
+            if (cart.length === 0) {
+
+                alert("Your cart is empty 🛒");
+
+                return;
+            }
+
+            let message = "YOUR CART\n\n";
+            let total = 0;
+
+            cart.forEach(function (item, index) {
+
+                message +=
+                    (index + 1) +
+                    ". " +
+                    item.name +
+                    " - Rs. " +
+                    item.price +
+                    "\n";
+
+                total += item.price;
+
+            });
+
+            message +=
+                "\n----------------\n" +
+                "Total: Rs. " +
+                total +
+                "\n\nThank you for shopping with AURELIA! ✨";
+
+            alert(message);
+        }
+
+
+        function subscribe() {
+
+            alert(
+                "Thank you for joining AURELIA Jewellery! ✨"
+            );
+
+        }
+
+
+        function searchProducts() {
+
+            let input =
+                document
+                    .getElementById("searchInput")
+                    .value
+                    .toLowerCase();
+
+            let products =
+                document.querySelectorAll(".product");
+
+            products.forEach(function (product) {
+
+                let name =
+                    product
+                        .querySelector("h3")
+                        .innerText
+                        .toLowerCase();
+
+                if (name.includes(input)) {
+
+                    product.style.display = "";
+
+                } else {
+
+                    product.style.display = "none";
+
+                }
+
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
